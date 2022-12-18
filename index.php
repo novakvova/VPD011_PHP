@@ -20,7 +20,10 @@ include($_SERVER["DOCUMENT_ROOT"] . '/options/connection_database.php');
     <div class="container py-5">
         <div class="row">
             <?php
-            $sql="SELECT id, name, image, price FROM tbl_products";
+            $sql="
+                SELECT p.id, p.name, p.price, pi.name as image
+                FROM tbl_products as p, tbl_product_images as pi
+                WHERE p.id=pi.product_id and pi.priority=1";
             foreach ($conn->query($sql) as $row) {
                 $id=$row['id'];
                 $name=$row['name'];
@@ -40,7 +43,7 @@ include($_SERVER["DOCUMENT_ROOT"] . '/options/connection_database.php');
                         </div>
 
                         <div class="mb-2 text-end">
-                            <button type="button" class="btn btn-success">Купить</button>
+                            <a href="product.php?id='.$id.'" class="btn btn-success">Купить</a>
                         </div>
                     </div>
                 </div>
