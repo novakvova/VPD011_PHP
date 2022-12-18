@@ -11,7 +11,7 @@
                         <a class="nav-link active" aria-current="page" href="/">Головна</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_product.php">Додати продукт</a>
+                        <a class="nav-link" href="products/create/add_product.php">Додати продукт</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
